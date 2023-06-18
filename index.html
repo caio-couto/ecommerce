@@ -5,16 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
+  <!--Favicon-->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!--Css imports-->
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/index.css">
+  <!--Script imports-->
+  <script src="./script/DB.js"></script>
   <script src="./script/header.js" defer></script>
+  <script src="./script/main.js" defer></script>
+  <!--Font imports-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | E-commerce product page</title>
+  <title>E-commerce product page</title>
 </head>
 
 <body>
@@ -62,7 +67,6 @@
             <p>Cart</p>
           </div>
           <div class="user__content">
-            <p>Your cart is empty</p>
           </div>
         </div>
         <div class="user__icon">
@@ -73,9 +77,7 @@
   </header>
   <main class="main">
     <div class="main__ligthbox"></div>
-    <div class="card">
-
-    </div>
+    <div class="card"></div>
     <div class="info">
       <div class="info__content">
         <p class="info__company"> Sneaker Company</p>
@@ -85,7 +87,8 @@
           durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
         <div class="info__price">
-          <h2>$125.00</h2>
+          <i>$</i>
+          <h2 id="info__price">125.00</h2>
           <span>50%</span </div>
         </div>
         <p class="info__off">$250.00</p>
@@ -94,17 +97,18 @@
             <button class="info__button" type="button">
               <img src="./images/icon-minus.svg" alt="minus-icon">
             </button>
-            <input type="number" name="amount" value="0">
+            <input class="info__text" type="number" name="amount" value="0">
+            <input type="hidden" name="_id" value="80028922">
             <button class="info__button" type="button">
               <img src="./images/icon-plus.svg" alt="plus-icon">
             </button>
           </div>
-          <button class="info__button info__button--submit" type="button">
+          <button class="info__button info__button--submit" type="submit">
             <img src="./images/white-icon-cart.svg" alt="cart-icon">
             <p>Add to cart</p>
-          </button </form>
+          </button 
+        </form>
       </div>
   </main>
 </body>
-
 </html>

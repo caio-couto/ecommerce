@@ -6,6 +6,7 @@
 } 
 .menu 
 {
+  position: relative;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -44,7 +45,7 @@
 {
   left: 0;
 }
-.menu li 
+.menu .menu__list li 
 {
   display: flex;
   align-items: center;
@@ -53,7 +54,7 @@
   height: 100%;
   position: relative;
 }
-.menu li:hover .menu__underlne
+.menu .menu__list li:hover .menu__underline
 {
   opacity: 1;
 }
@@ -76,26 +77,26 @@
 }
 .user 
 {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 45px
 }
-.user > div 
+.user .user__cart 
 {
   cursor: pointer;
   margin: 10px 5px;
 }
 .user .user__panel 
 {
-  top: 60px;
-  left: -125px;
+  top: 87px;
+  right: 0px;
+  transform: translateX(20%);
   display: none;
   flex-direction: column;
   border-radius: 10px;
   width: 350px;
   overflow: hidden;
-  min-height: 270px;
+  min-height: 260px;
   background-color: var(--white);
   position: absolute;
   -webkit-box-shadow: 0px 30px 55px -5px rgba(0,0,0,0.25);
@@ -117,11 +118,64 @@
 .user .user__content 
 {
   flex: 1;
+  flex-direction: column;
   display: flex;
+}
+.user .user__content.user__content--empty
+{
   align-items: center;
   justify-content: center;
   color: var(--dark-grayish-blue);
   font-weight: 700;
+}
+.user .user__item
+{
+  flex: 0;
+  height: 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user .user__item > img 
+{
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+}
+.user .user__info h3, .user .user__info span:first-of-type
+{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-grayish-blue);
+}
+.user .user__info span 
+{
+  line-height: 30px;
+}
+.user .user__info span:last-of-type
+{
+  color: var(--very-dark-blue);
+  font-weight: 700;
+  margin-left: 5px;
+}
+.user .user__item button
+{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.user__content > button 
+{
+  cursor: pointer;
+  background-color: var(--orange);
+  border: none;
+  padding: 20px 0px;
+  margin: 10px 20px;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 18px;
 }
 .user .user__icon
 {
@@ -147,6 +201,7 @@
   }
   .menu 
   {
+    position: static;
     padding: 0 20px;
     height: 70px;
     border-bottom: none;
@@ -175,10 +230,10 @@
   {
     margin-bottom: 30px;
   }
-  .menu li 
+  .menu .menu__list li 
   {
-    height: initial;
-    margin: 0px;
+    height: 0px;
+    margin: 20px 0px;
   }
   .menu li a 
   {
@@ -197,5 +252,13 @@
   {
     width: 24px;
     height: 24px;
+  }
+  .user .user__panel
+  {
+    width: calc(100% - 10px);
+    top: 75px;
+    left: 50%;
+    margin: 0 10px;
+    transform: translateX(calc(-50% - 10px));
   }
 }

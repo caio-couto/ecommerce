@@ -7,12 +7,9 @@
   display: flex;
   justify-content: space-between;
 }
-.card 
+.slider
 {
-  max-width: 460px;
-  width: 100%;
-  height: 600px;
-  background-color: red;
+  max-width: 450px;
 }
 .info 
 {
@@ -20,7 +17,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 30x 10px 0px 10px;
 }
 .info .info__company 
 {
@@ -44,11 +41,17 @@
   line-height: 24px;
   margin-bottom: 30px;
 }
-.info .info__price 
+.info .info__wrapper 
 {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.info .info__price 
+{
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 10px
 }
 .info .info__price i 
 {
@@ -80,7 +83,6 @@
   font-weight: 700;
   text-decoration-line: line-through;
   color: var(--grayish-blue);
-  margin-bottom: 30px;
 }
 .info .info__form 
 {
@@ -89,22 +91,28 @@
   justify-content: space-between;
   gap: 20px; 
 }
-.info .info__amount 
+.info .info__amount
 {
+  width: 250px;
   display: flex;
-}
-.info .info__button 
-{
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  border: none;background-color: var(--light-grayish-blue); 
+  border-radius: 10px;
+}
+.info .info__amount button
+{
+  width: 50px;
+  height: 60px;
   border: none;
-  padding: 15px 20px;
   background-color: var(--light-grayish-blue); 
 }
 .info .info__amount button:first-child
 {
   border-radius: 10px 0px 0px 10px;
 }
-.info .info__amount button:last-child 
+.info .info__amount button:last-child
 {
   border-radius: 0px 10px 10px 0px;
 }
@@ -156,10 +164,96 @@ input[type=number]
   opacity: 0.5;
 }
 
+.slider__wrapper 
+{
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.slider .slider__cards 
+{
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transform: translateX(0px);
+}
+.slider .slider__card 
+{
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+}
+.slider .slider__card img
+{
+  width: 100%;
+  height: 100%;
+}
+.slider .slider__previews 
+{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.slider .slider__preview 
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.slider .slider__ligthbox 
+{
+  width: 100px;
+  height: 100px;
+  background-color: var(--white);
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+}
+.slider .slider__preview:hover .slider__ligthbox
+{
+  opacity: .4;
+}
+.slider .slider__preview.slider__preview--focus 
+{
+  outline: 2px solid var(--orange);
+}
+.slider .slider__preview.slider__preview--focus .slider__ligthbox
+{
+  opacity: .8;
+}
+.slider .slider__preview img
+{
+  width: 100%;
+  height: 100%;
+}
+.slider .slider__buttons
+{
+  position: absolute;
+  top: 50%;
+  background-color: var(--white);
+  padding: 15px 20px;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+.slider .slider__wrapper .slider__buttons.slider__buttons--left
+{
+  left: 10px;
+}
+.slider .slider__wrapper .slider__buttons.slider__buttons--right
+{
+  right: 10px;
+}
 @media only screen and (max-width: 920px)
 {
   .main 
   {
+    margin: 0px auto 0px auto;
     flex-direction: column;
     align-items: center;
   }
@@ -167,8 +261,37 @@ input[type=number]
   {
     display: block;
   }
-  .info, .card 
+  .info, .slider 
   {
     max-width: 100%;
+  }
+  .info 
+  {
+    padding: 20px;
+  }
+  .info .info__title
+  {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .info .info__wrapper
+  {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .info .info__form
+  {
+    flex-direction: column;
+  }
+  .info .info__amount
+  {
+    width: 100%;
+  }
+  .info .info__button.info__button--submit 
+  {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }

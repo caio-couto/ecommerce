@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./styles/index.css">
   <!--Script imports-->
   <script src="./script/DB.js"></script>
+  <script src="./script/slider.js" defer></script>
   <script src="./script/header.js" defer></script>
   <script src="./script/main.js" defer></script>
   <!--Font imports-->
@@ -77,7 +78,49 @@
   </header>
   <main class="main">
     <div class="main__ligthbox"></div>
-    <div class="card"></div>
+    <div id="slider" class="slider">
+      <div class="slider__wrapper">
+        <div class="slider__buttons slider__buttons--left">
+          <img src="./images/icon-previous.svg">
+        </div>
+        <div class="slider__buttons slider__buttons--right">
+          <img src="./images/icon-next.svg">
+        </div>
+        <div class="slider__cards">
+          <div class="slider__card">
+            <img src="./images/image-product-1.jpg">
+          </div>
+          <div class="slider__card">
+            <img src="./images/image-product-2.jpg">
+          </div>
+          <div class="slider__card">
+            <img src="./images/image-product-3.jpg">
+          </div>
+          <div class="slider__card">
+            <img src="./images/image-product-4.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="slider__previews">
+        <div class="slider__preview slider__preview--focus">
+          <img src="./images/image-product-1-thumbnail.jpg">
+          <div class="slider__ligthbox"></div>
+        </div>
+        <div class="slider__preview">
+          <img src="./images/image-product-2-thumbnail.jpg">
+          <div class="slider__ligthbox"></div>
+        </div>
+        <div class="slider__preview">
+          <img src="./images/image-product-3-thumbnail.jpg">
+          <div class="slider__ligthbox"></div>
+        </div>
+        <div class="slider__preview">
+          <img src="./images/image-product-4-thumbnail.jpg">
+          <div class="slider__ligthbox"></div>
+        </div>
+      </div>
+    </div>
+    </div>
     <div class="info">
       <div class="info__content">
         <p class="info__company"> Sneaker Company</p>
@@ -86,12 +129,14 @@
           These low-profile sneakers are your perfect casual wear companion. Featuring a
           durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
-        <div class="info__price">
-          <i>$</i>
-          <h2 id="info__price">125.00</h2>
-          <span>50%</span </div>
+        <div class="info__wrapper">
+          <div class="info__price">
+            <i>$</i>
+            <h2 id="info__price">125.00</h2>
+            <span>50%</span </div>
+          </div>
+          <p class="info__off">$250.00</p>
         </div>
-        <p class="info__off">$250.00</p>
         <form class="info__form" target="#">
           <div class="info__amount">
             <button class="info__button" type="button">
@@ -106,9 +151,9 @@
           <button class="info__button info__button--submit" type="submit">
             <img src="./images/white-icon-cart.svg" alt="cart-icon">
             <p>Add to cart</p>
-          </button 
-        </form>
+          </button </form>
       </div>
   </main>
 </body>
+
 </html>

@@ -2,15 +2,18 @@
 {
   font-family: 'Kumbh Sans', sans-serif;
   width: 100%;
-  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 } 
 .menu 
 {
+  margin: 0 50px;
   position: relative;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   max-width: 1130px;
   height: 110px;
   font-weight: 400;
@@ -89,7 +92,7 @@
 .user .user__panel 
 {
   top: 87px;
-  right: 0px;
+  right: 40px;
   transform: translateX(20%);
   display: none;
   flex-direction: column;
@@ -143,6 +146,14 @@
   width: 50px;
   height: 50px;
 }
+.user .user__info 
+{
+  width: 230px;
+  margin: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .user .user__info h3, .user .user__info span:first-of-type
 {
   font-size: 16px;
@@ -192,7 +203,6 @@
 {
   outline: 2px solid var(--orange);
 }
-
 @media only screen and (max-width: 920px) 
 {
   .header
@@ -201,8 +211,7 @@
   }
   .menu 
   {
-    position: static;
-    padding: 0 20px;
+    margin: 0px 30px;
     height: 70px;
     border-bottom: none;
   }
@@ -253,12 +262,19 @@
     width: 24px;
     height: 24px;
   }
+}
+
+@media only screen and (max-width: 420px)
+{
+  .menu 
+  {
+    position: static;
+  }
   .user .user__panel
   {
-    width: calc(100% - 10px);
     top: 75px;
     left: 50%;
-    margin: 0 10px;
-    transform: translateX(calc(-50% - 10px));
+    transform: translateX(-50%);
+    width: calc(100% - 10px);
   }
 }

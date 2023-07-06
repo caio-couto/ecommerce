@@ -3,6 +3,9 @@ const infoText = document.querySelector(".info__text");
 const minusButton = infoButtons[0];
 const plusButton = infoButtons[1];
 const submitButton = infoButtons[2];
+const sliderElement = document.getElementById("slider");
+const slider = new Slider(sliderElement);
+slider.init();
 
 infoForm.addEventListener("submit", (event) =>
 {

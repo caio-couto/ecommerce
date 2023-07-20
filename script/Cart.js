@@ -63,6 +63,7 @@ class Cart
     const removedProduct = this.references.filter((product) => product._id != id);
     this.setLocalReferences(removedProduct);
     this.populatePanel();
+    this.updateCounter();
   }
 
   populatePanel()

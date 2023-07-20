@@ -10,6 +10,8 @@ class Cart
   init()
   {
     this.addListeners();
+    this.references = this.getLocalReferences();
+    this.updateCounter();
   }
 
   addListeners()
@@ -38,6 +40,23 @@ class Cart
     purchase.disableButtons();
   }
   
+  updateCounter()
+  {
+    const counter = this.user.querySelector(".user__counter");
+    this.references = this.getLocalReferences();   
+
+    if (this.references.length > 0)
+    {
+      const acc = this.references.reduce((acc, item) => acc + item.amount, 0);
+      counter.innerHTML = acc;
+      counter.classList.remove("user__counter--empty");
+    }
+    else
+    {
+      counter.classList.add("user__counter--empty");
+    }
+  }
+
   deleteItem(button)
   {
     const id = button.dataset.id; 
@@ -87,6 +106,7 @@ class Cart
     textHtml += `<button type="submit">Checkout</button>`;
     userContent.innerHTML = textHtml;
     this.deleteListener();
+    this.updateCounter();
   }
 
   getLocalReferences()

@@ -4,9 +4,9 @@
   max-width: 1050px;
   width: 100%;
   margin: 80px auto 0px auto;
-  padding: 0px 50px;
+  padding: 0px 20px;
   display: flex;
-  gap: 20px;
+  gap: 60px;
   justify-content: space-between;
 }
 .slider
@@ -112,6 +112,10 @@
   border: none;
   background-color: var(--light-grayish-blue); 
 }
+.info .info__amount button:hover
+{
+  opacity: 0.5;
+}
 .info .info__amount button:first-child
 {
   border-radius: 10px 0px 0px 10px;
@@ -156,10 +160,15 @@ input[type=number]
   color: var(--white);
   font-weight: 700;
   font-size: 18px;
-  -webkit-box-shadow: 0px 18px 60px -11px var(--orange);
-  -moz-box-shadow: 0px 18px 60px -11px var(--orange);
-  box-shadow: 0px 18px 60px -11px var(--orange);
+  -webkit-box-shadow: 0px 18px 37px -14px var(--orange);
+  -moz-box-shadow: 0px 18px 37px -14px var(--orange);
+  box-shadow: 0px 18px 37px -14px var(--orange);
 }
+.info .info__button.info__button--submit:hover
+{
+  opacity: 0.5;
+}
+
 .info .info__form.info__form--disabled .info__button, 
 .info .info__form.info__form--disabled input[type="number"],
 .info .info__form.info__form--disabled .info__button.info__button--submit
@@ -176,6 +185,8 @@ input[type=number]
   max-width: 550px;
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .modal .modal__ligthbox
 {
@@ -183,7 +194,7 @@ input[type=number]
   width: 100%;
   height: 100%;
   background-color: var(--black);
-  opacity: 0.4;
+  opacity: 0.75;
 }
 .slider__wrapper 
 {
@@ -263,7 +274,7 @@ input[type=number]
   height: 100%;
 }
 .slider__buttons
-{
+{ 
   user-select: none;
   display: none;
   position: absolute;
@@ -273,6 +284,10 @@ input[type=number]
   border-radius: 50%;
   z-index: 10;
   cursor: pointer;
+}
+.slider__buttons:hover img
+{
+  filter: invert(61%) sepia(53%) saturate(3464%) hue-rotate(346deg) brightness(101%) contrast(103%);
 }
 .slider__buttons.slider__buttons--left
 {
@@ -316,6 +331,10 @@ input[type=number]
   height: 20px;
   margin-bottom: 20px;
 }
+.modal .modal__close:hover img 
+{
+  filter: invert(61%) sepia(53%) saturate(3464%) hue-rotate(346deg) brightness(101%) contrast(103%);
+}
 .modal .modal__close img 
 {
   width: 100%;
@@ -343,7 +362,7 @@ input[type=number]
   }
   .info .info__title
   {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 20px;
   }
   .info__content 
@@ -372,8 +391,13 @@ input[type=number]
   }
   .slider .slider__buttons
   {
-    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 50%;
+    transform: translateY(-50%);
   }
   .slider .slider__previews
   {
@@ -399,15 +423,21 @@ input[type=number]
   }
   .slider__card 
   {
-    flex-shrink: 0;
     width: 100%;
-    height: 100%;
+    height: 300px;
+  }
+  .slider__card img 
+  {
+    object-fit: cover;
   }
   .info .info__wrapper
   {
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .info .info__description
+  {
+    margin-bottom: 20px;
   }
   .info .info__form 
   {

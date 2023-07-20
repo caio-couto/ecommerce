@@ -58,6 +58,7 @@ class Purchase
       const amount = Number(event.target.amount.value);
       const _id = event.target._id.value;
       this.addLocalItem(_id, amount);
+      cart.updateCounter();
     });
     const infoButtons = this.info.querySelectorAll(".info__button");
     infoButtons[0].addEventListener("click", () => this.buttonListener(false));

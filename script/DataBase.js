@@ -30,5 +30,3 @@ class DataBase
     return this.storage.products.find((element) => element._id == id);
   }
 }
-
-const dataBase = new DataBase();

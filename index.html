@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/index.css">
   <!--Script imports-->
-  <script src="./script/DB.js"></script>
-  <script src="./script/slider.js" defer></script>
+  <script src="./script/DataBase.js"></script>
+  <script src="./script/Modal.js" defer></script>
+  <script src="./script/Slider.js" defer></script>
+  <script src="./script/Purchase.js" defer></script>
+  <script src="./script/Cart.js" defer></script>
   <script src="./script/header.js" defer></script>
   <script src="./script/main.js" defer></script>
   <!--Font imports-->
@@ -67,8 +70,7 @@
           <div class="user__title">
             <p>Cart</p>
           </div>
-          <div class="user__content">
-          </div>
+          <div class="user__content"></div>
         </div>
         <div class="user__icon">
           <img src="./images/image-avatar.png" alt="user-image">
@@ -78,6 +80,54 @@
   </header>
   <main class="main">
     <div class="main__ligthbox"></div>
+    <div id="modal" class="modal">
+      <div class="modal__ligthbox"></div>
+      <div id="modal-slider" class="slider">
+        <div class="modal__close">
+          <img src="./images/white-icon-close.svg">
+        </div>
+        <div class="slider__wrapper">
+          <div class="slider__buttons slider__buttons--left">
+            <img src="./images/icon-previous.svg">
+          </div>
+          <div class="slider__buttons slider__buttons--right">
+            <img src="./images/icon-next.svg">
+          </div>
+          <div class="slider__cards">
+            <div class="slider__card">
+              <img src="./images/image-product-1.jpg">
+            </div>
+            <div class="slider__card">
+              <img src="./images/image-product-2.jpg">
+            </div>
+            <div class="slider__card">
+              <img src="./images/image-product-3.jpg">
+            </div>
+            <div class="slider__card">
+              <img src="./images/image-product-4.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="slider__previews">
+          <div class="slider__preview slider__preview--focus">
+            <img src="./images/image-product-1-thumbnail.jpg">
+            <div class="slider__ligthbox"></div>
+          </div>
+          <div class="slider__preview">
+            <img src="./images/image-product-2-thumbnail.jpg">
+            <div class="slider__ligthbox"></div>
+          </div>
+          <div class="slider__preview">
+            <img src="./images/image-product-3-thumbnail.jpg">
+            <div class="slider__ligthbox"></div>
+          </div>
+          <div class="slider__preview">
+            <img src="./images/image-product-4-thumbnail.jpg">
+            <div class="slider__ligthbox"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="slider" class="slider">
       <div class="slider__wrapper">
         <div class="slider__buttons slider__buttons--left">
@@ -120,7 +170,6 @@
         </div>
       </div>
     </div>
-    </div>
     <div class="info">
       <div class="info__content">
         <p class="info__company"> Sneaker Company</p>
@@ -133,11 +182,10 @@
           <div class="info__price">
             <i>$</i>
             <h2 id="info__price">125.00</h2>
-            <span>50%</span </div>
-          </div>
+            <span>50%</span>
           <p class="info__off">$250.00</p>
         </div>
-        <form class="info__form" target="#">
+        <form class="info__form" method="post" action="#">
           <div class="info__amount">
             <button class="info__button" type="button">
               <img src="./images/icon-minus.svg" alt="minus-icon">
@@ -151,8 +199,10 @@
           <button class="info__button info__button--submit" type="submit">
             <img src="./images/white-icon-cart.svg" alt="cart-icon">
             <p>Add to cart</p>
-          </button </form>
+          </button>
+        </form>
       </div>
+    </div>
   </main>
 </body>
 

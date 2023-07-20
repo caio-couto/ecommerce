@@ -8,7 +8,7 @@
 } 
 .menu 
 {
-  margin: 0 50px;
+  margin: 0px 50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -91,6 +91,7 @@
 }
 .user .user__panel 
 {
+  z-index: 2;
   top: 87px;
   right: 40px;
   transform: translateX(20%);
@@ -214,6 +215,7 @@
     margin: 0px 30px;
     height: 70px;
     border-bottom: none;
+    position: static;
   }
   .menu .menu__burger 
   {
@@ -261,6 +263,10 @@
   {
     width: 24px;
     height: 24px;
+  }
+  .user .user__panel 
+  {
+    right: 90px;    
   }
 }
 
